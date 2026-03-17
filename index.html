@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights BD - Premium LED & Neon Lighting Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a52;
+            --secondary: #2c5f8d;
+            --accent: #e67e22;
+            --success: #27ae60;
+            --bg: #f8f9fa;
+            --surface: #ffffff;
+            --text: #2c3e50;
+            --text-light: #546e7a;
+            --border: #dde2e6;
+            --shadow: rgba(26, 58, 82, 0.08);
+            --shadow-lg: rgba(26, 58, 82, 0.15);
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--surface);
+            box-shadow: 0 2px 8px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cart-btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-lg);
+        }
+
+        .cart-count {
+            background: white;
+            color: var(--accent);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .trust-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 82, 0.85), rgba(26, 58, 82, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%232c5f8d" width="1200" height="400"/><circle cx="200" cy="100" r="150" fill="%231a3a52" opacity="0.5"/><circle cx="800" cy="300" r="200" fill="%231a3a52" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        /* Categories */
+        .categories {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+
+        .category-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:nth-child(1) .category-image {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .category-card:nth-child(2) .category-image {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .category-card:nth-child(3) .category-image {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .category-card:nth-child(4) .category-image {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .category-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .category-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Products */
+        .products {
+            background: var(--surface);
+            padding: 4rem 0;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 20px var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .product-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .product-features li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        .add-to-cart-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* Payment Methods */
+        .payment-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .payment-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .payment-logo {
+            width: 100px;
+            height: 100px;
+            background: var(--surface);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .payment-logo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px var(--shadow-lg);
+        }
+
+        .bkash-logo {
+            background: linear-gradient(135deg, #e2136e 0%, #d91464 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nagad-logo {
+            background: linear-gradient(135deg, #ee4024 0%, #d63516 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .rocket-logo {
+            background: linear-gradient(135deg, #8e3cae 0%, #7a2d93 100%);
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .cod-logo {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--surface);
+            padding: 4rem 0;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 1.2rem;
+        }
+
+        /* Cart Sidebar */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 1998;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            right: -450px;
+            top: 0;
+            width: 450px;
+            height: 100vh;
+            background: var(--surface);
+            box-shadow: -4px 0 20px var(--shadow-lg);
+            transition: right 0.3s;
+            z-index: 1999;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem 2rem;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-cart:hover {
+            transform: rotate(90deg);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .cart-item-price {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .qty-display {
+            width: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .remove-item {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: opacity 0.3s;
+        }
+
+        .remove-item:hover {
+            opacity: 0.7;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+        }
+
+        .empty-cart-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .cart-footer {
+            padding: 1.5rem 2rem;
+            border-top: 2px solid var(--border);
+            background: var(--bg);
+        }
+
+        .cart-summary {
+            margin-bottom: 1rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .summary-row.total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .payment-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(230, 126, 34, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .trust-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .payment-methods {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item">
+                📞 +880 1623046975
+            </div>
+            <div class="top-bar-item">
+                🚚 Free Delivery on Orders Above ৳2000
+            </div>
+            <div class="top-bar-item">
+                📧 foyez12123@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">💡</span>
+                <span>Lights BD</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Trust Section -->
+    <div class="trust-section">
+        <div class="trust-content">
+            <div class="trust-item">
+                <div class="trust-icon">🔒</div>
+                <div class="trust-title">100% Secure Payment</div>
+                <div class="trust-desc">bKash, Nagad, COD Available</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✅</div>
+                <div class="trust-title">Genuine Products</div>
+                <div class="trust-desc">1 Year Warranty</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🚚</div>
+                <div class="trust-title">Fast Delivery</div>
+                <div class="trust-desc">All Over Bangladesh</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💬</div>
+                <div class="trust-title">24/7 Support</div>
+                <div class="trust-desc">Expert Assistance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Illuminate Your Space with Premium LED Solutions</h1>
+            <p>Transform your home, office, or business with our high-quality LED strips, neon lights, and professional lighting solutions</p>
+            <a href="#products" class="hero-cta">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterProducts('led-strip')">
+                <div class="category-image">💫</div>
+                <div class="category-info">
+                    <div class="category-name">LED Strip Lights</div>
+                    <div class="category-desc">Flexible RGB & Single Color</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('neon')">
+                <div class="category-image">✨</div>
+                <div class="category-info">
+                    <div class="category-name">Neon Flex Lights</div>
+                    <div class="category-desc">Custom Signs & Decor</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('power')">
+                <div class="category-image">⚡</div>
+                <div class="category-info">
+                    <div class="category-name">Power Supplies</div>
+                    <div class="category-desc">Drivers & Adapters</div>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('controller')">
+                <div class="category-image">🎮</div>
+                <div class="category-info">
+                    <div class="category-name">Controllers</div>
+                    <div class="category-desc">Smart & Remote Control</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <h2 class="section-title">We Accept Multiple Payment Methods</h2>
+        <p style="color: var(--text-light); max-width: 600px; margin: 0 auto;">Choose your preferred payment option for a secure and convenient shopping experience</p>
+        <div class="payment-methods">
+            <div class="payment-method">
+                <div class="payment-logo bkash-logo">bKash</div>
+                <span style="font-weight: 600;">bKash</span>
+            </div>
+            <div class="payment-method">
+                <div class="payment-logo nagad-logo">Nagad</div>
+                <span style="font-weight: 600;">Nagad</span>
+            </div>
+            <div class="payment-method">
+                <div class="payment-logo rocket-logo">🚀</div>
+                <span style="font-weight: 600;">Rocket</span>
+            </div>
+            <div class="payment-method">
+                <div class="payment-logo cod-logo">💵</div>
+                <span style="font-weight: 600;">Cash on Delivery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Excellent quality LED strips! Installation was easy and the lights are very bright. Customer service was also very helpful."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AH</div>
+                        <div class="author-info">
+                            <div class="author-name">Hassan</div>
+                            <div class="author-title">Dhaka, Bangladesh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Fast delivery and genuine products. I bought neon lights for my shop and they look amazing. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TR</div>
+                        <div class="author-info">
+                            <div class="author-name">Tahsin </div>
+                            <div class="author-title">Chittagong, Bangladesh</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Very professional service. The RGB controller works perfectly with my setup. Payment through bKash was smooth."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SH</div>
+                        <div class="author-info">
+                            <div class="author-name"> Haque</div>
+                            <div class="author-title">Sylhet, Bangladesh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some products to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">৳0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery:</span>
+                    <span id="delivery">৳100</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">৳0</span>
+                </div>
+            </div>
+            <select class="payment-select" id="paymentMethod">
+                <option value="">Select Payment Method</option>
+                <option value="bkash">bKash</option>
+                <option value="nagad">Nagad</option>
+                <option value="rocket">Rocket</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About LuxeLights BD</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.7;">
+                    We are Bangladesh's trusted supplier of premium LED and neon lighting solutions. Quality products with professional support.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#returns">Returns & Warranty</a></li>
+                    <li><a href="#installation">Installation Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">📞 +880 1623046975</div>
+                    <div class="contact-item">📧 foyez12123@gmail.com</div>
+                    <div class="contact-item">📍 Dhaka, Bangladesh</div>
+                    <div class="contact-item">🕐 10 AM - 8 PM (Everyday)</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LuxeLights BD. All rights reserved. | Trusted LED & Neon Lighting Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Products Database
+        const products = [
+            {
+                id: 1,
+                name: 'RGB LED Strip Light - 5M',
+                price: 1200,
+                category: 'led-strip',
+                icon: '🌈',
+                gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                description: 'Premium quality 5050 RGB LED strip with 16 million colors',
+                features: ['5050 SMD LEDs', '16.4ft/5M Length', 'Remote Control', 'IP65 Waterproof'],
+                badge: 'Best Seller'
+            },
+            {
+                id: 2,
+                name: 'Warm White LED Strip - 10M',
+                price: 1800,
+                category: 'led-strip',
+                icon: '💡',
+                gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                description: 'Energy efficient warm white LED strip for ambient lighting',
+                features: ['2835 SMD LEDs', '32.8ft/10M Length', 'Dimmable', 'Low Power'],
+                badge: ''
+            },
+            {
+                id: 3,
+                name: 'Neon Flex LED - Custom Sign',
+                price: 3500,
+                category: 'neon',
+                icon: '✨',
+                gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                description: 'Flexible neon LED for custom signage and decorations',
+                features: ['Flexible Design', 'Multiple Colors', 'Indoor/Outdoor', 'Easy Install'],
+                badge: 'Popular'
+            },
+            {
+                id: 4,
+                name: 'Smart WiFi LED Controller',
+                price: 850,
+                category: 'controller',
+                icon: '📱',
+                gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                description: 'Control your lights via smartphone app and voice commands',
+                features: ['WiFi Enabled', 'App Control', 'Voice Compatible', 'Music Sync'],
+                badge: ''
+            },
+            {
+                id: 5,
+                name: '12V 10A Power Supply',
+                price: 950,
+                category: 'power',
+                icon: '⚡',
+                gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                description: 'High quality regulated power adapter for LED strips',
+                features: ['12V DC Output', '10A Capacity', 'Short Circuit Protection', 'CE Certified'],
+                badge: ''
+            },
+            {
+                id: 6,
+                name: 'COB LED Strip - Premium',
+                price: 2200,
+                category: 'led-strip',
+                icon: '🔆',
+                gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                description: 'Spot-free COB LED technology for uniform lighting',
+                features: ['COB Technology', 'No Spots', 'High CRI >90', '5M Length'],
+                badge: 'New Arrival'
+            },
+            {
+                id: 7,
+                name: 'RGB Neon Rope Light - 5M',
+                price: 1650,
+                category: 'neon',
+                icon: '🎨',
+                gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+                description: 'Colorful neon rope light for decorative purposes',
+                features: ['RGB Colors', '5M Length', 'Flexible', 'Remote Control'],
+                badge: ''
+            },
+            {
+                id: 8,
+                name: 'LED Strip Connector Kit',
+                price: 350,
+                category: 'power',
+                icon: '🔌',
+                gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                description: 'Complete connector kit for LED strip installation',
+                features: ['Multiple Connectors', '10mm Width', 'Easy Connect', 'Includes Clips'],
+                badge: ''
+            },
+            {
+                id: 9,
+                name: 'Addressable LED Strip 5M',
+                price: 2800,
+                category: 'led-strip',
+                icon: '🌟',
+                gradient: 'linear-gradient(135deg, #fddb92 0%, #d1fdff 100%)',
+                description: 'WS2812B addressable RGB LED strip for effects',
+                features: ['Individually Control', '60 LEDs/M', 'Arduino Compatible', 'Effects Ready'],
+                badge: 'Premium'
+            },
+            {
+                id: 10,
+                name: 'Touch Dimmer Controller',
+                price: 450,
+                category: 'controller',
+                icon: '👆',
+                gradient: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
+                description: 'Touch sensitive dimmer for single color LED strips',
+                features: ['Touch Control', 'Smooth Dimming', '12-24V Input', 'Compact Size'],
+                badge: ''
+            },
+            {
+                id: 11,
+                name: 'Neon Sign - Custom Text',
+                price: 4500,
+                category: 'neon',
+                icon: '💬',
+                gradient: 'linear-gradient(135deg, #f77062 0%, #fe5196 100%)',
+                description: 'Custom neon sign with your text or logo',
+                features: ['Custom Design', 'Any Color', 'Acrylic Backing', 'Wall Mount'],
+                badge: 'Custom Order'
+            },
+            {
+                id: 12,
+                name: 'Waterproof Power Supply IP67',
+                price: 1200,
+                category: 'power',
+                icon: '💧',
+                gradient: 'linear-gradient(135deg, #6a85b6 0%, #bac8e0 100%)',
+                description: 'Weatherproof power supply for outdoor installations',
+                features: ['IP67 Rated', '12V 5A Output', 'Outdoor Safe', 'Durable Casing'],
+                badge: ''
+            }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        // Display Products
+        function displayProducts() {
+            const grid = document.getElementById('productsGrid');
+            const filteredProducts = currentFilter === 'all' 
+                ? products 
+                : products.filter(p => p.category === currentFilter);
+            
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                    <div class="product-image" style="background: ${product.gradient}">
+                        ${product.icon}
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-desc">${product.description}</p>
+                        <ul class="product-features">
+                            ${product.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                        <div class="product-footer">
+                            <div>
+                                <span class="price-label">Price</span>
+                                <div class="product-price">৳${product.price}</div>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter Products
+        function filterProducts(category) {
+            currentFilter = category;
+            displayProducts();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCart();
+            
+            // Animation feedback
+            const cartBtn = document.querySelector('.cart-btn');
+            cartBtn.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                cartBtn.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // Update Cart Display
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const delivery = subtotal >= 2000 ? 0 : 100;
+            const total = subtotal + delivery;
+            
+            cartCount.textContent = totalItems;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <p>Your cart is empty</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some products to get started!</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image" style="background: ${item.gradient}">
+                            ${item.icon}
+                        </div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">৳${item.price} × ${item.quantity}</div>
+                            <div class="cart-item-actions">
+                                <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                                <span class="qty-display">${item.quantity}</span>
+                                <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                <button class="remove-item" onclick="removeFromCart(${item.id})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                cartFooter.style.display = 'block';
+                
+                document.getElementById('subtotal').textContent = `৳${subtotal}`;
+                document.getElementById('delivery').textContent = delivery === 0 ? 'FREE' : `৳${delivery}`;
+                document.getElementById('total').textContent = `৳${total}`;
+            }
+        }
+
+        // Update Quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        // Toggle Cart
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Checkout
+        function checkout() {
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            
+            if (!paymentMethod) {
+                alert('⚠️ Please select a payment method');
+                return;
+            }
+            
+            if (cart.length === 0) {
+                alert('⚠️ Your cart is empty');
+                return;
+            }
+            
+            const total = document.getElementById('total').textContent;
+            
+            let message = `✅ Order Confirmed!\n\n`;
+            message += `Payment Method: ${paymentMethod.toUpperCase()}\n`;
+            message += `Total Amount: ${total}\n\n`;
+            message += `📦 Order Details:\n`;
+            cart.forEach(item => {
+                message += `- ${item.name} × ${item.quantity}\n`;
+            });
+            message += `\n📞 We will contact you shortly to confirm your order.`;
+            
+            alert(message);
+            
+            // Clear cart after order
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        // Initialize
+        displayProducts();
+    </script>
+</body>
+</html>
